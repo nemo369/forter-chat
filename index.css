@@ -1,0 +1,47 @@
+html,
+body,
+app-index {
+  height: 100%;
+  margin: 0;
+}
+
+/** Presets */
+body,
+:root {
+  --fc-primary: #0084ff;
+  --fc-secondary: #00d894;
+  --fc-gold: #fad988;
+  --fc-red: #ff9fa1;
+  --fc-turquoise: #8af6eb;
+  --fc-indigo: #a0a4f6;
+  --fc-pink: #e78ff8;
+  --fc-brand-blue: #bdd8ff;
+
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+fc-button[size="large"] {
+  --fc-button-background-color: var(--fc-secondary);
+  --fc-button-item-color: white;
+  --fc-button-min-height: 60px;
+  --fc-button-padding: 20px;
+  --fc-button-default-border-radius: 30px;
+
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  text-decoration: none;
+  border-radius: 66px;
+}
+
+fc-checkbox {
+  --fc-checkbox-check-color: #1f75f7;
+
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.chat-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
