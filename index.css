@@ -4,12 +4,14 @@ app-index {
   height: 100%;
   margin: 0;
 }
+
 body {
-  color: var(--bg-color-dark);
-  background-color: var(--bg-color);
   padding: 1rem;
+  color: var(--bg-color-dark);
   font-weight: 200;
+  background-color: var(--bg-color);
 }
+
 /** Presets */
 body,
 :root {
@@ -21,11 +23,10 @@ body,
   --fc-indigo: #a0a4f6;
   --fc-pink: #e78ff8;
   --fc-brand-blue: #bdd8ff;
-
-  font-family: "Nunito", sans-serif;
-
   --bg-color: #f4f4f4;
   --bg-color-dark: #141414;
+
+  font-family: "Nunito", sans-serif;
 }
 
 fc-button[size="large"] {
@@ -53,15 +54,17 @@ fc-checkbox {
 .flex {
   display: flex;
 }
+
 /* UTITLITIES */
 
 .chat-wrapper {
-  max-width: 1280px;
-  padding: 4px;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
+  max-width: 1280px;
+  margin: auto;
+  padding: 4px;
 }
+
 @media (min-width: 640px) {
   .chat-wrapper {
     grid-template-columns: 8fr 2fr;
