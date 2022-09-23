@@ -6,6 +6,7 @@ import { ChatRoom } from '../components/room';
 import { ChatMembers } from '../components/members';
 
 export class PageHome extends PageElement {
+
   render() {
     return html`<section class="chat-wrapper">
         <chat-room></chat-room>

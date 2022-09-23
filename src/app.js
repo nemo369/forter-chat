@@ -12,11 +12,12 @@ import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
 import { AppHeader } from './components/header';
 import { AppFooter } from './components/footer';
+export { WebSocketCmp } from './components/web-socket';
 
 export class App extends LitElement {
   render() {
-    const levels = ['Level 1', 'Level 2'];
     return html`${AppHeader()}
+    <web-socket></web-socket>
     <pwa-install-button>
               <button>Install app</button>
             </pwa-install-button>
