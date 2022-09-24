@@ -21,7 +21,7 @@
     "lint:stylelint": "stylelint \"index.css\" --ignore-path .gitignore",
     "lit:type-checking": "lit-analyzer \"src/{components,pages}/**/*.js\" --strict",
     "serve": "web-dev-server --watch",
-    "start": "npm run serve && nodemon server/server.js",
+    "start": "npm run serve && nodemon --ignore db/ server/server.js",
     "test": "echo \"Error: no test specified\"",
     "type-checking": "tsc --noEmit && npm run lit:type-checking"
   },
@@ -35,10 +35,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "express-ws": "^5.0.2",
-    "json-server": "^0.17.0",
     "lit": "^2.0.0-rc.1",
     "pwa-helper-components": "~0.2.10",
-    "socket.io": "^4.5.2",
     "tslib": "^2.1.0",
     "ws": "^8.8.1"
   },

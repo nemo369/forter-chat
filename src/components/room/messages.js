@@ -16,11 +16,11 @@ export class RoomMessages extends LitElement {
 
         /* scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.1); */
         /* scrollbar-width: thin; */
-        border-right: 10px solid transparent
+        border-right: 10px solid transparent;
       }
-    
+
       ol::-webkit-scrollbar-thumb {
-        background:  #c5c5c5;
+        background: #c5c5c5;
       }
       ol::-webkit-scrollbar-track {
         background: white;
@@ -44,6 +44,10 @@ export class RoomMessages extends LitElement {
     super();
     this.messages = [];
   }
+  updated = (name) => {
+    this._scrollDown();
+  };
+
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener(NEW_MESSAGE_EVENT, this._setMessages);
@@ -63,6 +67,14 @@ export class RoomMessages extends LitElement {
     if (Array.isArray(event.detail)) {
       this.messages = [...this.messages, ...event.detail];
     }
+  };
+
+  _scrollDown = () => {
+    if(this.shadowRoot.querySelector('ol')){
+      this.shadowRoot.querySelector(
+        'ol'
+        ).scrollTop = this.shadowRoot.querySelector('ol').scrollHeight;
+      }
   };
 }
 customElements.define('room-messages', RoomMessages);

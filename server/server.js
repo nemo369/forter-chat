@@ -4,13 +4,19 @@ const WebSocket = require('ws');
 const cors = require('cors');
 const app = express();
 
+const messages = require('./routes/messages');
+
+
 app.use(cors());
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ port: 7071 });
 const clients = new Map();
 
+
+
+
+
 wss.on('connection', (ws) => {
-  console.log(ws);
   const metadata = {
     id: uuidv4(),
     color: Math.floor(Math.random() * 360), // number between 0-360 +  hsl(color, 60%, 60%) = is the color,
@@ -35,6 +41,7 @@ wss.on('connection', (ws) => {
     [...clients.keys()].forEach((client) => {
       client.send(res);
     });
+    messages.addMessage(message)
   });
 
   ws.on('close', () => {
@@ -54,8 +61,8 @@ function sendCurrentUsers(clients) {
     );
   });
 }
-const messages = require('./routes/messages');
-app.use('/messages', messages);
+app.use('/messages', messages.router);
+
 
 //start our server
 server.listen(process.env.PORT || 8999, () => {
