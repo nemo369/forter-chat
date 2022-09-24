@@ -1,4 +1,6 @@
 import {LitElement, html} from './base';
+import "./room/messages";
+import "./room/input";
 export class ChatRoom extends LitElement {
   static properties = {
     version: {},

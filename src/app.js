@@ -12,6 +12,8 @@ import 'pwa-helper-components/pwa-install-button.js';
 import 'pwa-helper-components/pwa-update-available.js';
 import { AppHeader } from './components/header';
 import { AppFooter } from './components/footer';
+import { MessageService } from './services/message.service';
+import { NEW_MESSAGE_EVENT } from './helpers/consts';
 export { WebSocketCmp } from './components/web-socket';
 
 export class App extends LitElement {
@@ -40,6 +42,13 @@ export class App extends LitElement {
 
   firstUpdated() {
     attachRouter(this.querySelector('main'));
+    setTimeout(this.getData, 300);
+  }
+
+  async getData() {
+    const messages = await MessageService.getPreviousMessages();
+    const event = new CustomEvent(NEW_MESSAGE_EVENT,{detail:messages});
+    window.dispatchEvent(event);
   }
 }
 

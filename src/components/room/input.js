@@ -1,3 +1,4 @@
+import { NEW_INPUT_EVENT } from '../../helpers/consts';
 import { LitElement, html, css } from '../base';
 
 export class RoomInput extends LitElement {
@@ -40,14 +41,13 @@ export class RoomInput extends LitElement {
 
   onsubmit(e) {
     e.preventDefault();
-    const message = this.renderRoot.querySelector('input').value
-    this.renderRoot.querySelector('input').value =''
-    this.dispatchEvent(
-      new CustomEvent('user-entered-message', {
-        detail: message,
+    const detail = this.renderRoot.querySelector('input').value
+    window.dispatchEvent(
+      new CustomEvent(NEW_INPUT_EVENT, {
+        detail,
       })
     );
-    console.log(message);
+    this.renderRoot.querySelector('input').value =''
   }
 }
 customElements.define('room-input', RoomInput);
