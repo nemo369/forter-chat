@@ -1,22 +1,8 @@
-import {LitElement, html} from './base';
-import "./room/messages";
-import "./room/input";
-export class ChatRoom extends LitElement {
-  static properties = {
-    version: {},
-  };
+import { html } from './base';
 
-  constructor() {
-    super();
-    this.version = 'STARTING';
-  }
-
-  render() {
-    return html`
-    <h1>Welcome to Chat Room #123</h1>
+export const ChatRoom = () => {
+  return html`
     <room-messages></room-messages>
     <room-input></room-input>
-`;
-  }
-}
-customElements.define('chat-room', ChatRoom);
+  `;
+};

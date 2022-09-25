@@ -105,7 +105,7 @@ export class WebSocketCmp extends LitElement {
   }
 
   render() {
-    return html`<div class=${this.wsStatus}>WS</div>`;
+    return html`<div class="${this.wsStatus}">WS</div>`;
   }
 
   _sendNewMessage = (event) => {

@@ -6,12 +6,20 @@ import { ChatRoom } from '../components/room';
 import { ChatMembers } from '../components/members';
 
 export class PageHome extends PageElement {
-
   render() {
-    return html`<section class="chat-wrapper">
-        <chat-room></chat-room>
-        <chat-members></chat-members>
-      </section>`;
+    return html`
+      <h1 class="chat-title max-width">
+        Welcome to Support group for
+        <span class="chat-title__subtitle">dog</span> brothers to
+        <span class="chat-title__subtitle">newborn baby</span> humans
+      </h1>
+      <div class="chat-wrapper__outer max-width">
+        <section class="chat-wrapper">
+          <div>${ChatRoom()}</div>
+          <chat-members></chat-members>
+        </section>
+      </div>
+    `;
   }
 }
 

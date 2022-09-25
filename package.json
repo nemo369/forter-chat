@@ -10,6 +10,8 @@
     "npm": ">=7.0.0"
   },
   "scripts": {
+    "backend": "node --ignore db/ server/server.js",
+    "backend:watch": "nodemon --ignore db/ server/server.js",
     "build": "rimraf server/dist/ && rollup --config",
     "build:preview": "rimraf server/dist/ && GIT_HASH=`git branch --show-current` rollup --config",
     "format": "npm-run-all format:*",
@@ -21,7 +23,7 @@
     "lint:stylelint": "stylelint \"index.css\" --ignore-path .gitignore",
     "lit:type-checking": "lit-analyzer \"src/{components,pages}/**/*.js\" --strict",
     "serve": "web-dev-server --watch",
-    "start": "npm run serve && nodemon --ignore db/ server/server.js",
+    "start": "npm-run-all --parallel serve backend:watch",
     "test": "echo \"Error: no test specified\"",
     "type-checking": "tsc --noEmit && npm run lit:type-checking"
   },

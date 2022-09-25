@@ -18,7 +18,7 @@ export { WebSocketCmp } from './components/web-socket';
 
 export class App extends LitElement {
   render() {
-    return html`${AppHeader()}
+    return html`<div id="app">${AppHeader()}
     <web-socket></web-socket>
     <pwa-install-button>
               <button>Install app</button>
@@ -26,14 +26,12 @@ export class App extends LitElement {
             <pwa-update-available>
               <button>Update app</button>
             </pwa-update-available>
-          </div>
-        </div>
     </header>
 
       <!-- The main content is added / removed dynamically by the router -->
       <main role="main"></main>
 
-      ${AppFooter()}`;
+      ${AppFooter()}</div>`;
   }
 
   createRenderRoot() {
@@ -47,7 +45,7 @@ export class App extends LitElement {
 
   async getData() {
     const messages = await MessageService.getPreviousMessages();
-    const event = new CustomEvent(NEW_MESSAGE_EVENT,{detail:messages});
+    const event = new CustomEvent(NEW_MESSAGE_EVENT, { detail: messages });
     window.dispatchEvent(event);
   }
 }
