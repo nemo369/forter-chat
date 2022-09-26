@@ -1,3 +1,11 @@
+const fetch = require('node-fetch');
+
+const getDogImage = async () => {
+  const API_URL = 'https://dog.ceo/api/breeds/image/random'; //
+  const res = await fetch(API_URL);
+  const { message } = await res.json();
+  return message;
+};
 function uuidv4() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     var r = (Math.random() * 16) | 0,
@@ -30,5 +38,6 @@ function getDogName() {
 
 module.exports = {
   uuidv4,
-  getDogName
+  getDogName,
+  getDogImage
 };

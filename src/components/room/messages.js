@@ -6,6 +6,7 @@ export class RoomMessages extends LitElement {
   static get styles() {
     return css`
       ol {
+        position: relative;
         list-style: none;
         padding: 0 0rem;
         display: flex;
@@ -22,10 +23,10 @@ export class RoomMessages extends LitElement {
       }
 
       ol::-webkit-scrollbar-thumb {
-        background: #c5c5c5;
+        background: white;
       }
       ol::-webkit-scrollbar-track {
-        background: white;
+        background: #c5c5c5;
       }
       ol::-webkit-scrollbar {
         width: 2px;
@@ -40,10 +41,19 @@ export class RoomMessages extends LitElement {
         margin-right: 24px;
       }
       .message__avatar {
-        width: 0.5rem;
-        height: 0.5rem;
+        width: 56px;
+        height: 56px;
         flex-shrink: 0;
         border-radius: 100%;
+        overflow: hidden;
+        border: 2px solid #c5c5c5;
+        box-shadow: rgb(255 255 255) 2px 1px 4px 2px;
+      }
+      .message__avatar img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
       }
       .message__inner {
         background-color: white;
@@ -137,7 +147,14 @@ export class RoomMessages extends LitElement {
 }
 customElements.define('room-messages', RoomMessages);
 
-const SingleMessage = ({ message, userName, userId, type, userColor }) => {
+const SingleMessage = ({
+  message,
+  userName,
+  userId,
+  type,
+  userColor,
+  userAvatar
+}) => {
   if (type === 'SERVICE') {
     return html`<li>
       <div class="message__service">
@@ -149,15 +166,22 @@ const SingleMessage = ({ message, userName, userId, type, userColor }) => {
   // if the message is a text message, convert to ENUM in real life
   return html`<li
     data-user-id=${userId}
-    class="message message-text ${userId === config.me ? 'me' : ''} ${type ===
-    'BOT'
-      ? 'message-bot'
-      : ''}"
+    class="message message-text ${userId === config.me?.userId
+      ? 'me'
+      : ''} ${type === 'BOT' ? 'message-bot' : ''}"
   >
     <div
-      style="background:hsl(${userColor},60%, 60%)"
+      style="border-color:hsl(${userColor},60%, 60%)"
       class="message__avatar"
-    ></div>
+    >
+      <img
+        src="${userAvatar}"
+        alt="${userName}"
+        width="150"
+        height="150"
+        loading="lazy"
+      />
+    </div>
     <div class="message__inner">
       <div class="message__text">${message}</div>
       <div class="message__username">${userName}</div>

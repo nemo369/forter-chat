@@ -9,7 +9,7 @@ export class PageHome extends PageElement {
   render() {
     return html`
       <h1 class="chat-title max-width">
-        Welcome to Support group for
+        Welcome to Support group for<br />
         <span class="chat-title__subtitle">dog</span> brothers to
         <span class="chat-title__subtitle">newborn baby</span> humans
       </h1>

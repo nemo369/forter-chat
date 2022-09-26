@@ -14,6 +14,7 @@
     "backend:watch": "nodemon --ignore db/ server/server.js",
     "build": "rimraf server/dist/ && rollup --config",
     "build:preview": "rimraf server/dist/ && GIT_HASH=`git branch --show-current` rollup --config",
+    "dev": "npm-run-all --parallel serve backend:watch",
     "format": "npm-run-all format:*",
     "format:eslint": "npm run lint:eslint -- --fix",
     "format:prettier": "prettier \"**/*{html,js,json,md,js,webmanifest}\" --ignore-path .gitignore --write",
@@ -23,7 +24,7 @@
     "lint:stylelint": "stylelint \"index.css\" --ignore-path .gitignore",
     "lit:type-checking": "lit-analyzer \"src/{components,pages}/**/*.js\" --strict",
     "serve": "web-dev-server --watch",
-    "start": "npm-run-all --parallel serve backend:watch",
+    "start": "npm-run-all --parallel serve backend",
     "test": "echo \"Error: no test specified\"",
     "type-checking": "tsc --noEmit && npm run lit:type-checking"
   },
@@ -38,6 +39,7 @@
     "express": "^4.18.1",
     "express-ws": "^5.0.2",
     "lit": "^2.0.0-rc.1",
+    "node-fetch": "^2.6.7",
     "pwa-helper-components": "~0.2.10",
     "tslib": "^2.1.0",
     "ws": "^8.8.1"
