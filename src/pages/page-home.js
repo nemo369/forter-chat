@@ -9,9 +9,9 @@ export class PageHome extends PageElement {
   render() {
     return html`
       <h1 class="chat-title max-width">
-        Welcome to Support group for<br />
-        <span class="chat-title__subtitle">dog</span> brothers to
-        <span class="chat-title__subtitle">newborn baby</span> humans
+        Support group for<br />
+        <span class="chat-title__subtitle">dogs</span> with
+        <span class="chat-title__subtitle">baby</span> human siblings
       </h1>
       <div class="chat-wrapper__outer max-width">
         <section class="chat-wrapper">

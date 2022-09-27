@@ -1,3 +1,124 @@
 {
-    "messages": []
+  "messages": [
+    {
+      "userId": "1",
+      "userColor": 101,
+      "userName": "Bark Wallberg",
+      "userAvatar": "https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=612x612&w=0&h=ORoe6n6_2ejgEF8fyp6LQElAhUUvof70pNze0nYC5QE=",
+      "message": "Hello everyone my name is Bark Wallberg, My parents sent me away for a few days and when I came back there was a human baby in the house",
+      "date": 1664259460749,
+      "type": "TEXT",
+      "msgId": "1a"
+    },
+    {
+      "userId": "2",
+      "userColor": 20,
+      "userName": "Lassie",
+      "userAvatar": "https://i.imgur.com/y4r0TaG.png",
+      "message": "Welcome Bark, I know exactly what you're going through",
+      "date": 1664259460849,
+      "type": "TEXT",
+      "msgId": "1b"
+    },
+    {
+      "userId": "1",
+      "userColor": 101,
+      "userName": "Bark Wallberg",
+      "userAvatar": "https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=612x612&w=0&h=ORoe6n6_2ejgEF8fyp6LQElAhUUvof70pNze0nYC5QE=",
+      "message": "Why is the baby allowed to cry and make noise while I’m sleeping but not the other way around?",
+      "date": 1664259460949,
+      "type": "TEXT",
+      "msgId": "2a"
+    },
+    {
+      "userId": "3",
+      "userColor": 220,
+      "userName": "Anonymous Dog",
+      "userAvatar": "https://cdn.pixabay.com/photo/2016/07/15/15/55/dachshund-1519374_960_720.jpg",
+      "message": "I know right, I think it's because they're not as cute as us",
+      "date": 1664259461849,
+      "type": "TEXT",
+      "msgId": "1c"
+    },
+    {
+      "userId": "2",
+      "userColor": 20,
+      "userName": "Lassie",
+      "userAvatar": "https://i.imgur.com/y4r0TaG.png",
+      "message": "I'm going to go and get some food, I'll be back in a bit",
+      "date": 1664259462749,
+      "type": "TEXT",
+      "msgId": "2b"
+    },
+    {
+      "userId": "1",
+      "userColor": 101,
+      "userName": "Bark Wallberg",
+      "userAvatar": "https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=612x612&w=0&h=ORoe6n6_2ejgEF8fyp6LQElAhUUvof70pNze0nYC5QE=",
+      "message": "Does any one know why are they always complaining about my fur being everywhere?",
+      "date": 1664259430749,
+      "type": "TEXT",
+      "msgId": "1a"
+    },
+    {
+      "userId": "3",
+      "userColor": 220,
+      "userName": "Anonymous Dog",
+      "userAvatar": "https://cdn.pixabay.com/photo/2016/07/15/15/55/dachshund-1519374_960_720.jpg",
+      "message": "Human babies don't come out as strong and ready to play as we do",
+      "date": 1664259461849,
+      "type": "TEXT",
+      "msgId": "1c"
+    },
+    {
+      "userId": "1",
+      "userColor": 101,
+      "userName": "Lassie",
+      "userAvatar": "https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=612x612&w=0&h=ORoe6n6_2ejgEF8fyp6LQElAhUUvof70pNze0nYC5QE=",
+      "message": "I'm going to go and get some food, I'll be back in a bit",
+      "date": 1664259440749,
+      "type": "TEXT",
+      "msgId": "51a24b24-de47-4938-b9b9-c1062e1f15ff"
+    },
+    {
+      "userId": "4",
+      "userColor": 330,
+      "userName": "Woofy goldberg",
+      "userAvatar": "https://pbs.twimg.com/media/Di_SokJXoAEirQP?format=jpg&name=900x900",
+      "message": "Are cats allowed in this support group?",
+      "date": 1664259450749,
+      "type": "TEXT",
+      "msgId": "4c"
+    },
+    {
+      "userId": "1",
+      "userColor": 101,
+      "userName": "Bark Wallberg",
+      "userAvatar": "https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=612x612&w=0&h=ORoe6n6_2ejgEF8fyp6LQElAhUUvof70pNze0nYC5QE=",
+      "message": "No",
+      "date": 1664259460749,
+      "type": "TEXT",
+      "msgId": "3a"
+    },
+    {
+      "userId": "1",
+      "userColor": 101,
+      "userName": "Bark Wallberg",
+      "userAvatar": "https://media.istockphoto.com/photos/cool-dog-picture-id1049869360?k=20&m=1049869360&s=612x612&w=0&h=ORoe6n6_2ejgEF8fyp6LQElAhUUvof70pNze0nYC5QE=",
+      "message": "When can I play with the baby?",
+      "date": 1664259470749,
+      "type": "TEXT",
+      "msgId": "1a"
+    },
+    {
+      "userId": "4",
+      "userColor": 330,
+      "userName": "Woofy goldberg",
+      "userAvatar": "https://pbs.twimg.com/media/Di_SokJXoAEirQP?format=jpg&name=900x900",
+      "message": "I think you should wait until it's a bit older",
+      "date": 1664259480749,
+      "type": "TEXT",
+      "msgId": "4c"
+    }
+  ]
 }

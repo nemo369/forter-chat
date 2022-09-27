@@ -19,7 +19,6 @@ export { WebSocketCmp } from './components/web-socket';
 export class App extends LitElement {
   render() {
     return html`<div id="app">${AppHeader()}
-    <web-socket></web-socket>
     <pwa-install-button>
               <button>Install app</button>
             </pwa-install-button>

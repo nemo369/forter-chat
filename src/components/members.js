@@ -11,12 +11,34 @@ export class ChatMembers extends LitElement {
         padding: 0 0rem;
         display: flex;
         flex-direction: column;
-        gap: 1rem 0;
+        gap: 1rem;
       }
       :host {
         border-left: 2px dashed white;
         padding-left: 1rem;
         margin-left: 1rem;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      @media (max-width: 640px) {
+        :host {
+          order: -1;
+          padding: 0;
+          border-left: none;
+          border-bottom: 2px dashed white;
+        }
+        ul {
+          padding: 0 0 24px 0;
+          flex-direction: row;
+          overflow: auto;
+          scroll-snap-type: x mandatory;
+          white-space: nowrap;
+          max-width: 80vw;
+        }
+        h2 {
+          display: none;
+        }
       }
     `;
   }
@@ -41,7 +63,8 @@ export class ChatMembers extends LitElement {
   }
   render() {
     return html`<aside>
-      <h2>Available now</h2>
+      <web-socket></web-socket>
+      <h2>Online pack members</h2>
       <ul>
         ${this.members.map(
           (member) =>

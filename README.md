@@ -4,9 +4,10 @@
 
 ## Getting started
 
-The front-end is built with Dojo Starter Kit. The back-end is built with Node.js and Express (In real life with some more time Ill probably separate the two to different repos and built the BE with Nest.js, prisma and typescript).
-The database is just a plain JSON file to mimic NoSQL, Since there is no live demo
-it was important to me that anyone could just `run npm start` and see the final app _working locally_.
+This app's front-end is built with Dojo Starter Kit.
+The back-end is built with Node.js and Express (In real life with some more time I would separate the two to different repos and build the back-end with Nest.js, prisma and typescript).
+The database is just a plain JSON file to mimic NoSQL.
+Since there is no live demo it was important to me that anyone could just `run npm start` and see the final app _working locally_.
 
 ### Start the development server
 

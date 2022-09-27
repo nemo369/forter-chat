@@ -40,6 +40,7 @@ export class RoomMessages extends LitElement {
         gap: 0 8px;
         margin-right: 24px;
       }
+
       .message__avatar {
         width: 56px;
         height: 56px;
@@ -49,6 +50,16 @@ export class RoomMessages extends LitElement {
         border: 2px solid #c5c5c5;
         box-shadow: rgb(255 255 255) 2px 1px 4px 2px;
       }
+
+      @media (max-width: 640px) {
+        .message__avatar {
+          width: 32px;
+          height: 32px;
+        }
+        .message {
+          margin-right: 8px;
+        }
+      }
       .message__avatar img {
         width: 100%;
         height: 100%;
@@ -56,10 +67,11 @@ export class RoomMessages extends LitElement {
         object-fit: cover;
       }
       .message__inner {
+        --box-color: rgb(223 223 223 / 39%);
         background-color: white;
         padding: 12px 32px 12px 12px;
         border-radius: 0 12px 12px 12px;
-        box-shadow: rgb(223 223 223 / 39%) 1px 3px 2px 1px;
+        box-shadow: var(--box-color, rgb(223 223 223 / 39%)) 1px 3px 2px 1px;
       }
       .message__text {
         padding-bottom: 12px;
@@ -98,6 +110,36 @@ export class RoomMessages extends LitElement {
         border-radius: 24px;
         box-shadow: rgb(223 223 223) 1px 3px 2px 1px;
         font-size: 0.75em;
+      }
+
+      .message__avatar {
+        animation: appear-avatar ease 0.35s forwards;
+      }
+      .message__inner {
+        animation: appear-msg ease 0.5s forwards;
+      }
+      @keyframes appear-avatar {
+        from {
+          transform: rotate(-15deg) scale(0.8);
+        }
+        to {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+
+      @keyframes appear-msg {
+        0% {
+          opacity: 0;
+          transform: translateY(40%);
+        }
+        50% {
+          opacity: 0.4;
+          transform: translateY(50%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     `;
   }
@@ -171,7 +213,7 @@ const SingleMessage = ({
       : ''} ${type === 'BOT' ? 'message-bot' : ''}"
   >
     <div
-      style="border-color:hsl(${userColor},60%, 60%)"
+      style="border-color:hsl(${userColor},50%, 50%)"
       class="message__avatar"
     >
       <img
@@ -182,8 +224,13 @@ const SingleMessage = ({
         loading="lazy"
       />
     </div>
-    <div class="message__inner">
-      <div class="message__text">${message}</div>
+    <div
+      class="message__inner"
+      style="--box-color:hsl(${userColor} 50% 50% / 15%)"
+    >
+      <div class="message__text">
+        ${type === 'BOT' ? html`<div .innerHTML="${message}"></div>` : message}
+      </div>
       <div class="message__username">${userName}</div>
     </div>
   </li>`;

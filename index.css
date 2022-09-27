@@ -142,6 +142,12 @@ fc-checkbox {
   border-radius: 24px;
 }
 
+@media (max-width: 640px) {
+  .chat-wrapper {
+    padding: 6px 4px;
+  }
+}
+
 @media (min-width: 640px) {
   .chat-wrapper {
     grid-template-columns: 8fr 2fr;
@@ -153,5 +159,34 @@ fc-checkbox {
 
   .chat-title br {
     display: block;
+  }
+}
+
+.nemo-hover {
+  color: black;
+  text-decoration: none;
+  background: linear-gradient(to right, crimson, pink, springgreen);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: color 0.2s ease-in-out;
+  animation: rainbow 2s ease-in-out infinite;
+}
+
+.nemo-hover:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
   }
 }

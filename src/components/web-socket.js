@@ -11,7 +11,7 @@ export class WebSocketCmp extends LitElement {
     return css`
       .ws-bar {
         --color-status: white;
-        position: fixed;
+        /* position: fixed; */
         top: 1rem;
         right: 1rem;
         width: 2rem;
@@ -27,9 +27,10 @@ export class WebSocketCmp extends LitElement {
         padding: 4px 6px;
         box-sizing: border-box;
       }
+
       .ws-bar:hover {
-        max-width: 10rem;
-        width: 10rem;
+        max-width: 100%;
+        width: auto;
         border-radius: 24px;
         color: white;
       }
@@ -51,8 +52,8 @@ export class WebSocketCmp extends LitElement {
         align-items: center;
       }
       .more-info .avatar {
-        width: 2rem;
-        height: 2rem;
+        width: 1.8rem;
+        height: 1.8rem;
         border-radius: 100%;
         overflow: hidden;
         white-space: nowrap;
@@ -67,6 +68,13 @@ export class WebSocketCmp extends LitElement {
         opacity: 1;
         transition: all 0.3s ease-in-out;
         transition-delay: 0.3s;
+      }
+      @media (max-width: 640px) {
+        .ws-bar {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+        }
       }
     `;
   }

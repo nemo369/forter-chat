@@ -16,12 +16,10 @@ function uuidv4() {
 
 function getDogName() {
   const dogNames = [
-    'Bark wallberg',
     'Obi Wag Kenobi',
     'Sherlock Bones',
     'Snoopy',
     'Bark Obama',
-    'Lassie',
     'Beethoven',
     'Rin Tin Tin',
     'Old Yeller',
@@ -29,8 +27,7 @@ function getDogName() {
     'Scooby Doo',
     'Air Bud',
     'Bark Twain',
-    'Lady and the Tramp',
-    'Anonymous Dog'
+    'Lady and the Tramp'
   ];
 
   return dogNames[Math.floor(Math.random() * dogNames.length)];

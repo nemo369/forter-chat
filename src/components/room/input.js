@@ -52,6 +52,10 @@ export class RoomInput extends LitElement {
       .sending .send-svg {
         transform: translateX(100px) rotate(35deg);
       }
+
+      input::placeholder {
+        color: var(--bg-color-dark);
+      }
     `;
   }
   constructor() {
@@ -70,7 +74,7 @@ export class RoomInput extends LitElement {
     >
       <input
         type="text"
-        placeholder="Bark or Type here"
+        placeholder="Bark your message here.."
         name="input"
         required
       />
