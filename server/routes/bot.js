@@ -1,4 +1,5 @@
 const { uuidv4 } = require('../be-utils');
+const { getPossibleAnswer } = require('./elasticsearch');
 const BOT_NAME = 'BARK-E';
 const BOT_ID = 'BOT_ID';
 const BOT_COLOR = 140;
@@ -34,17 +35,17 @@ const getWelcomeMessages = () => {
 const getBotAnswer = async (message) => {
   const isQuestion = message.includes('?');
   if (isQuestion) {
-    const possibleAnswer = 'TODO';
-    if (possibleAnswer) {
-      return {
-        ...getBotObj(),
-        message: 'txt'
-      };
-    }
+    const possibleAnswer = await getPossibleAnswer(message);
+    return {
+      ...getBotObj(),
+      message: possibleAnswer
+        ? possibleAnswer
+        : 'I do not know the answer to that question. Try answering it yourself, and next time I will know.'
+    };
   }
 
-  const isBotTaged = message.toUpperCase().includes(`@${BOT_NAME}`);
-  if (isBotTaged) {
+  const isBotTagged = message.toUpperCase().includes(`@${BOT_NAME}`);
+  if (isBotTagged) {
     return {
       ...getBotObj(),
       message: `It seems you tagged me, Does that mean I'm gonna get fed now?`
