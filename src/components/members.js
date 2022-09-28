@@ -2,7 +2,7 @@ import config from '../config';
 import { ALL_MEMBERS_EVENT } from '../helpers/consts';
 import { LitElement, html, css } from './base';
 import './room/member';
-
+import './web-socket';
 export class ChatMembers extends LitElement {
   static get styles() {
     return css`
@@ -69,7 +69,9 @@ export class ChatMembers extends LitElement {
         ${this.members.map(
           (member) =>
             html`<li>
-              <single-member member=${JSON.stringify(member)}></single-member>
+              <single-member
+                data-member="${JSON.stringify(member)}"
+              ></single-member>
             </li>`
         )}
       </ul>

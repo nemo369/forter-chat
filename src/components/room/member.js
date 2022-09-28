@@ -39,7 +39,7 @@ export class SingleMember extends LitElement {
   }
 
   render() {
-    const member = JSON.parse(this.member);
+    const member = JSON.parse(this.dataset.member);
     return html`<div
         class="circle "
         style="background:hsl(${member.userColor},60%, 60%)"

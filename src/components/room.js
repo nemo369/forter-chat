@@ -1,4 +1,6 @@
 import { html } from './base';
+import './room/messages';
+import './room/input';
 
 export const ChatRoom = () => {
   return html`

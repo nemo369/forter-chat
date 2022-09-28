@@ -41,6 +41,7 @@
     "lit": "^2.0.0-rc.1",
     "node-fetch": "^2.6.7",
     "pwa-helper-components": "~0.2.10",
+    "string-similarity": "^4.0.4",
     "tslib": "^2.1.0",
     "ws": "^8.8.1"
   },
